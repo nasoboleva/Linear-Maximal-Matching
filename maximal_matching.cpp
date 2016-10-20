@@ -24,7 +24,6 @@ Matching FindMatching (std::vector<Edge> graph_, size_t VertexNumber) {
     for (const auto edge: graph_) {
         if (!matching_.vertecies[edge.v] && !matching_.vertecies[edge.u]) {
             matching_.matching.push_back(edge);
-            std::cout << "(" << edge.v << "," << edge.u << ")" << std::endl;
             matching_.vertecies[edge.v] = true;
             matching_.vertecies[edge.u] = true;
         }
@@ -43,7 +42,7 @@ int main()
         graph.push_back(Edge(v, u));
     }
     Matching maximal_matching = FindMatching(graph, VertexNumber);
-    std::cout << "Ребра получанного паросочетания:" << std::endl;
+    std::cout << "Ребра полученного паросочетания:" << std::endl;
     for (const auto edge: maximal_matching.matching) {
         std::cout << "(" << edge.v << "," << edge.u << ")" << std::endl;
     }
